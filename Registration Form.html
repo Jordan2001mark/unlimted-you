@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+   <title>Registration</title>
+   <link rel="icon" href="Unlimited You Icon.png" type="image/gif" sizes="16x16">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+* {
+  box-sizing: border-box;
+}
+.menu {
+  float: left;
+  width: 20%;
+}
+.menuitem {
+  padding: 8px;
+  margin-top: 7px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.main {
+  float: left;
+  width: 60%;
+  padding: 0 20px;
+  overflow: hidden;
+}
+.right {
+  background-color: lightblue;
+  float: left;
+  width: 20%;
+  padding: 10px 15px;
+  margin-top: 7px;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
+  }
+}
+     </style>
+     <style>
+      ul.topnav {
+       list-style-type: none;
+       margin: 0;
+       padding: 0;
+       overflow: hidden;
+       background-color: #333;
+       position: -webkit-sticky; /* Safari */
+       top: 0;
+       width: 100%;
+       }
+      ul.topnav li {
+       float: left;
+       border-right: 1px solid #bbb;
+       }
+      li a, .dropbtn {
+       display: inline-block;
+       color: #E8894A;
+       text-align: center;
+       padding: 14px 16px;
+       text-decoration: none;
+       }
+      ul.topnav li a:hover, .dropdown:hover .dropbtn {
+       background-color: #111;
+       }
+      ul.topnav li.dropdown {
+       display: inline-block;
+       }
+      .dropdown-content {
+       display: none;
+       position: absolute;
+       background-color: #f9f9f9;
+       min-width: 160px;
+       box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+       z-index: 1;
+       }
+      .dropdown-content a {
+       color: black;
+       padding: 12px 16px;
+       text-decoration: none;
+       display: block;
+       text-align: left;
+       }
+      .dropdown:hover .dropdown-content {
+       display: block;
+       }
+      ul.topnav li a:hover:not(.active) {
+       background-color: lightgray;
+       }
+      ul.topnav li a.active {
+       background-color: lightgray;
+       }
+      @media screen and (max-width: 600px) {
+       ul.topnav li.right,
+       ul.topnav li {float: none;}
+       }
+     </style>
+     <style>
+        /* Style all input fields */
+        input {
+          width: 100%;
+          padding: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          margin-top: 6px;
+          margin-bottom: 16px;
+        }
+        
+        /* Style the submit button */
+        input[type=submit] {
+          background-color: #E8894A;
+          color: white;
+        }
+        
+        /* Style the container for inputs */
+        .container {
+          background-color: #f1f1f1;
+          padding: 20px;
+        }
+        
+        /* The message box is shown when the user clicks on the password field */
+        #message {
+          display:none;
+          background: #f1f1f1;
+          color: #000;
+          position: relative;
+          padding: 20px;
+          margin-top: 10px;
+        }
+        
+        #message p {
+          padding: 10px 35px;
+          font-size: 18px;
+        }
+        
+        /* Add a green text color and a checkmark when the requirements are right */
+        .valid {
+          color: green;
+        }
+        
+        .valid:before {
+          position: relative;
+          left: -35px;
+          content: "✔";
+        }
+        
+        /* Add a red text color and an "x" when the requirements are wrong */
+        .invalid {
+          color: red;
+        }
+        
+        .invalid:before {
+          position: relative;
+          left: -35px;
+          content: "✖";
+        }
+        </style>
+          <style>
+                img {
+                  display: block;
+                  margin-left: auto;
+                  margin-right: auto;
+                }
+				  </style>
+				  <style>
+					.responsive {
+					  width: 100%;
+					  height: auto;
+					}
+					</style>
+					<style>
+						body {
+						  font-family: Arial, Helvetica, sans-serif;
+						  background-color: black;
+						}
+						
+						* {
+						  box-sizing: border-box;
+						}
+						
+						/* Add padding to containers */
+						.container {
+						  padding: 16px;
+						  background-color: white;
+						}
+						
+						/* Full-width input fields */
+						input[type=text], input[type=password] {
+						  width: 100%;
+						  padding: 15px;
+						  margin: 5px 0 22px 0;
+						  display: inline-block;
+						  border: none;
+						  background: #f1f1f1;
+						}
+						
+						input[type=text]:focus, input[type=password]:focus {
+						  background-color: #ddd;
+						  outline: none;
+						}
+						
+						/* Overwrite default styles of hr */
+						hr {
+						  border: 1px solid #f1f1f1;
+						  margin-bottom: 25px;
+						}
+						
+						/* Set a style for the submit button */
+						.registerbtn {
+						  background-color: #E8894A;
+						  color: white;
+						  padding: 16px 20px;
+						  margin: 8px 0;
+						  border: none;
+						  cursor: pointer;
+						  width: 100%;
+						  opacity: 0.9;
+						}
+						
+						.registerbtn:hover {
+						  opacity: 1;
+						}
+						
+						/* Add a blue text color to links */
+						a {
+						  color: dodgerblue;
+						}
+						
+						/* Set a grey background color and center the text of the "sign in" section */
+						.signin {
+						  background-color: #f1f1f1;
+						  text-align: center;
+						}
+            </style>
+                  <script> 
+          
+                    // Function to check Whether both passwords 
+                    // is same or not. 
+                    function checkPassword(form) { 
+                        password1 = form.password1.value; 
+                        password2 = form.password2.value; 
+          
+                        // If password not entered 
+                        if (password1 == '') 
+                            alert ("Please enter Password"); 
+                              
+                        // If confirm password not entered 
+                        else if (password2 == '') 
+                            alert ("Please enter confirm password"); 
+                              
+                        // If Not same return False.     
+                        else if (password1 != password2) { 
+                            alert ("\nPassword did not match: Please try again...") 
+                            return false; 
+                        } 
+          
+                        // If same return True. 
+                        else{ 
+                            alert("Password Match: Welcome to Unlimited You") 
+                            return true; 
+                        } 
+                    } 
+                </script>
+</head>
+<body style="background-color:whitesmoke;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+	<img src="Unlimited You Logo.jpg" alt="Unlimited You Logo" style="max-width:auto;height:auto;" class="responsive">
+<hr>
+<ul class="topnav">
+<li><a href="Home.html"> Home </a></li>
+<li><a href="Download.html"> Download </a></li>
+<li class="dropdown">
+<a class="active" href="javascript:void(0)" class="dropbtn"> My Account </a>
+<div class="dropdown-content">
+<a href="My Account.html"> My Account </a>
+<a href="Login.html"> Login </a>
+</div>
+</li>
+<li><a href="User Manual.html"> User Manual </a></li>
+<li><a href="Contact.html"> Contact </a></li>
+</ul>
+<br>
+<h2 style="background-color:#e5e5e5;"> REGISTRATION FORM </h2>
+<P> Please fill in the form below; </p>
+    
+    <form action="Thank You.html" method="post" onSubmit = "return checkPassword(this)">
+        <div class="imgcontainer">
+          <img src="Avatar.png" alt="Avatar" class="avatar" style="width:200px;max-width:200px;height:auto;border:0">
+        </div>
+
+        <div class="container">
+          <form action="My Account.html">
+ 
+
+              <label for="firstname"><b>First Name</b></label>
+              <input type="text" placeholder="Enter First Name" name="firstname" required>
+      
+              <label for="lastname"><b>Last Name</b></label>
+              <input type="text" placeholder="Enter Last Name" name="lastname" required>      
+
+				<label for="email"><b>Email</b></label>
+				<input type="email" placeholder="Enter Email" name="email" required>
+			
+              <label for="usrname"><b>Username</b></label>
+              <input type="text" id="usrname" name="usrname" required>
+            
+              <label for="psw"><b>Password</b></label>
+              <input type="password" id="password1" name="password1" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+
+              <label for="psw"><b>Repeat Password</b></label>
+              <input type="password" id="password2" name="password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+       
+              <p>By creating an account you agree to our <a href="https://app.termly.io/document/terms-of-use-for-website/793a1245-7997-493d-b850-3782aea05da9">Terms & Privacy</a>.</p>
+
+              <button type="submit" class="registerbtn">Register</button>
+            </form>
+          </div>   
+      
+          <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+          </div>
+                          
+          <script>
+          var myInput = document.getElementById("password1");
+          var letter = document.getElementById("letter");
+          var capital = document.getElementById("capital");
+          var number = document.getElementById("number");
+          var length = document.getElementById("length");
+          
+          // When the user clicks on the password field, show the message box
+          myInput.onfocus = function() {
+            document.getElementById("message").style.display = "block";
+          }
+          
+          // When the user clicks outside of the password field, hide the message box
+          myInput.onblur = function() {
+            document.getElementById("message").style.display = "none";
+          }
+          
+          // When the user starts to type something inside the password field
+          myInput.onkeyup = function() {
+            // Validate lowercase letters
+            var lowerCaseLetters = /[a-z]/g;
+            if(myInput.value.match(lowerCaseLetters)) {  
+              letter.classList.remove("invalid");
+              letter.classList.add("valid");
+            } else {
+              letter.classList.remove("valid");
+              letter.classList.add("invalid");
+            }
+            
+            // Validate capital letters
+            var upperCaseLetters = /[A-Z]/g;
+            if(myInput.value.match(upperCaseLetters)) {  
+              capital.classList.remove("invalid");
+              capital.classList.add("valid");
+            } else {
+              capital.classList.remove("valid");
+              capital.classList.add("invalid");
+            }
+          
+            // Validate numbers
+            var numbers = /[0-9]/g;
+            if(myInput.value.match(numbers)) {  
+              number.classList.remove("invalid");
+              number.classList.add("valid");
+            } else {
+              number.classList.remove("valid");
+              number.classList.add("invalid");
+            }
+            
+            // Validate length
+            if(myInput.value.length >= 8) {
+              length.classList.remove("invalid");
+              length.classList.add("valid");
+            } else {
+              length.classList.remove("valid");
+              length.classList.add("invalid");
+            }
+          }
+          </script>
+
+  <div class="container" style="background-color:#f1f1f1"> <br>
+	<div class="container signin">
+		<p>Already have an account? <a href="Login.html">Sign in</a>.</p>
+	  </div>
+</form>
+</div>
+
+<p> A link has been sent to your <a href="https://mail.google.com/mail/">email address,</a> click it to activate your account. </p>
+
+<div style="background-color:#e5e5e5;text-align:right;padding:10px;margin-top:7px;font-size:1.2vw;"> This website is a © copyright of Unlimited You Company. </div>
+
+</body>
+</html>
